@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #050508;
+    color: #f0f0ff;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(85, 85, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(85, 85, 255, 0.15);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #5555ff 0%, #3333ee 100%);
+    color: white;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(85, 85, 255, 0.5);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: rgba(240, 240, 255, 0.7);
+    font-family: 'DM Sans', sans-serif;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.06);
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .input-field {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    transition: all 0.2s;
+    outline: none;
+  }
+
+  .input-field:focus {
+    border-color: #5555ff;
+    box-shadow: 0 0 0 3px rgba(85, 85, 255, 0.15);
+    background: rgba(85, 85, 255, 0.05);
+  }
+
+  .input-field::placeholder {
+    color: rgba(240,240,255,0.3);
+  }
+
+  .tag-easy {
+    background: rgba(0, 255, 136, 0.15);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tag-medium {
+    background: rgba(255, 238, 0, 0.15);
+    color: #ffee00;
+    border: 1px solid rgba(255, 238, 0, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tag-hard {
+    background: rgba(255, 0, 136, 0.15);
+    color: #ff0088;
+    border: 1px solid rgba(255, 0, 136, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .option-btn {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(240,240,255,0.9);
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .option-btn:hover:not(:disabled) {
+    background: rgba(85, 85, 255, 0.1);
+    border-color: rgba(85, 85, 255, 0.4);
+    color: white;
+    transform: translateX(4px);
+  }
+
+  .option-btn.selected {
+    background: rgba(85, 85, 255, 0.15);
+    border-color: #5555ff;
+    color: white;
+  }
+
+  .option-btn.correct {
+    background: rgba(0, 255, 136, 0.12);
+    border-color: #00ff88;
+    color: #00ff88;
+  }
+
+  .option-btn.wrong {
+    background: rgba(255, 0, 136, 0.12);
+    border-color: #ff0088;
+    color: #ff0088;
+  }
+
+  .progress-bar {
+    background: rgba(255,255,255,0.08);
+    border-radius: 100px;
+    height: 6px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #5555ff, #00ccff);
+    transition: width 0.5s ease;
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(85, 85, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(85, 85, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px rgba(85, 85, 255, 0.3);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #a3a3ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .score-ring {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+@layer utilities {
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(85, 85, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 255, 0.5);
+}
