@@ -33,7 +33,7 @@ Rules:
 
   try {
     const response = await groq.chat.completions.create({
-      model: 'llama-3.1-8b-instant',  // ✅ Fixed model name
+      model: 'openai/gpt-oss-120b',  // ✅ Fixed model name
       messages: [
         {
           role: 'system',
@@ -103,7 +103,7 @@ Generate a detailed performance report. Return ONLY valid JSON:
 
   try {
     const response = await groq.chat.completions.create({
-      model: 'llama3-8b-8192',
+      model: 'openai/gpt-oss-120b',
       messages: [
         {
           role: 'system',
